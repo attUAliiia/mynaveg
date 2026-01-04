@@ -24,19 +24,3 @@ A privacy-focused web browser built with Python and Qt. It features a custom-bui
 pip install PyQt5 PyQtWebEngine
 
 
-License & Legal
-Project License
-This source code is released under the MIT License. You are free to use, modify, and distribute it.
-
-Third-Party Licenses
-This software is built upon several open-source projects. If you distribute this application, you must comply with their respective licenses:
-
-PyQt5 is licensed under the GPL v3.
-
-Qt Project (QtWebEngine) is licensed under the LGPL v3 and GPL v3.
-
-Chromium (the engine behind QtWebEngine) is licensed under the BSD License.
-
-> Note: This browser is for educational and privacy purposes. It is not affiliated with Google or the Qt Company.
-
-Created with Python 
