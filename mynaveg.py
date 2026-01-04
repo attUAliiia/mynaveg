@@ -5,7 +5,7 @@ from PyQt5.QtWidgets import (QApplication, QMainWindow, QToolBar, QAction,
 from PyQt5.QtWebEngineWidgets import QWebEngineView, QWebEngineProfile, QWebEnginePage, QWebEngineSettings
 from PyQt5.QtWebEngineCore import QWebEngineUrlRequestInterceptor
 
-# --- 1. BLOQUEADOR INTELIGENTE ---
+# --- adblocker ---
 class SmartBlocker(QWebEngineUrlRequestInterceptor):
     def __init__(self):
         super().__init__()
@@ -18,17 +18,17 @@ class SmartBlocker(QWebEngineUrlRequestInterceptor):
     def interceptRequest(self, info):
         url = info.requestUrl().toString().lower()
         
-        # --- CORRECCIÓN AQUÍ: Faltaba la palabra 'for' ---
+        # i messed up on something here lmaoo 
         for forbanned in self.blocked_substrings:
             if forbanned in url:
-                print(f"🚫 Bloqueado: {url[:30]}...") 
+                print(f"🚫 Blocked: {url[:30]}...") 
                 info.block(True)
                 return
         
-        # User Agent Spoofing
+        # bradar ur now un chrome LMAOOOOOOOOOOOOOOOOOOOOOOOOO (jkjk)
         info.setHttpHeader(b"User-Agent", b"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36")
 
-# --- 2. VENTANA PRINCIPAL ---
+# main window
 class FinalBrowser(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -164,4 +164,5 @@ if __name__ == "__main__":
     app = QApplication(sys.argv)
     window = FinalBrowser()
     window.show()
+
     sys.exit(app.exec_())
