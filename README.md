@@ -1,0 +1,2 @@
+# mynaveg
+runs with QtWebEngine
